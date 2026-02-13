@@ -1,0 +1,152 @@
+.sessions-schedule-layout {
+    display: grid;
+    grid-template-columns: 1fr 1px 1.5fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.sessions-column {
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.column-title {
+    font-size: 1.5rem;
+    color: var(--color-primary-end);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--color-bg-light);
+}
+
+.sessions-list-clean {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.session-item-clean {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+.session-item-clean:hover {
+    background: var(--color-bg-light);
+    transform: translateX(5px);
+}
+
+.session-icon-small {
+    color: var(--color-primary-start);
+}
+
+.session-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Divider */
+.schedule-divider {
+    background: #e0e0e0;
+    height: 100%;
+}
+
+/* Schedule Column */
+.schedule-column {
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.schedule__tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.schedule__tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    background: #f8faff;
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.schedule__tab:hover {
+    background: #eef0fe;
+}
+
+.schedule__tab.active {
+    background: var(--color-primary-gradient);
+}
+
+.schedule__tab.active .tab-day,
+.schedule__tab.active .tab-date {
+    color: white;
+}
+
+.tab-day {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-primary-start);
+}
+
+.tab-date {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Table */
+.schedule__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule__table th {
+    text-align: left;
+    padding: 15px;
+    background: #f8faff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--color-text-body);
+}
+
+.schedule__table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.time-badge {
+    padding: 5px 10px;
+    background: var(--color-bg-light);
+    color: var(--color-primary-end);
+    font-weight: 700;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.program-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+@media (max-width: 992px) {
+    .sessions-schedule-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-divider {
+        display: none;
+    }
+}
