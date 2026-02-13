@@ -95,10 +95,43 @@
     background: var(--color-primary-gradient);
     color: var(--color-white);
     border-radius: 0 4px 4px 0;
+    border: none;
+    cursor: pointer;
 }
 
 .footer__bottom {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer__top {
+        gap: 30px;
+        grid-template-columns: 1fr;
+        /* Stack vertically on small screens */
+    }
+
+    .footer__section {
+        text-align: center;
+    }
+
+    .footer__socials {
+        justify-content: center;
+    }
+
+    .footer__contact li {
+        justify-content: center;
+        /* Center align contact items */
+    }
+
+    .footer__form {
+        max-width: 300px;
+        margin: 1rem auto 0;
+    }
 }

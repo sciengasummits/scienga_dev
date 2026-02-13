@@ -294,6 +294,16 @@ textarea.form-control {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .register-page {
+        padding: 0 1rem;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
     .accommodation-table {
         display: block;
         overflow-x: auto;
@@ -301,6 +311,18 @@ textarea.form-control {
 
     .registration-form-container {
         flex-direction: column;
+        gap: 2rem;
+    }
+
+    .form-section {
+        min-width: 100%;
+    }
+    
+    .logos-section {
+        min-width: 100%;
+        order: -1; /* Show logos first on mobile, or keep bottom? Keeping default order usually better unless requested. Let's keep it but make it center. */
+        align-items: center;
+        margin-bottom: 2rem;
     }
 
     .form-row {
@@ -313,7 +335,20 @@ textarea.form-control {
         overflow-x: auto;
     }
 
+    .summary-section {
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    .accommodation-section {
+        padding: 1rem;
+    }
+
     .action-buttons {
         flex-direction: column;
+    }
+    
+    .btn-register, .btn-reset {
+        width: 100%;
     }
 }
