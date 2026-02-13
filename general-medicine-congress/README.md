@@ -1,16 +1,75 @@
-# React + Vite
+# General Medical Congress
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive web application designed for the General Medical Congress, facilitating event management, attendee registration, and information dissemination.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Event Overview**: detailed information about the congress, including theme, mission, and vision.
+- **Schedule & Program**: Interactive schedule of events, sessions, and workshops.
+- **Registration System**: User-friendly registration form for attendees.
+- **Venue & Travel**: Information about the venue, location maps, and travel guidelines.
+- **Sponsorship**: Details for sponsors and partners.
+- **Responsive Design**: Optimized for viewing on desktops, tablets, and mobile devices.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend Framework**: [React](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: CSP-compatible CSS with CSS Variables for theming.
+- **Routing**: [React Router](https://reactrouter.com/)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v16 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/sciengasummits/scienga_dev.git
+    ```
+
+2.  Navigate to the project directory:
+    ```bash
+    cd general-medicine-congress
+    ```
+
+3.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+### Running the Application
+
+To start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`.
+
+### Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+## Project Structure
+
+- `src/components`: Reusable UI components (forms, layout, sections).
+- `src/pages`: Page components corresponding to routes.
+- `src/assets`: Static assets like images and styles.
+- `src/App.jsx`: Main application component and routing setup.
+- `src/main.jsx`: Entry point.
+
+## License
+
+[License Information Here]
