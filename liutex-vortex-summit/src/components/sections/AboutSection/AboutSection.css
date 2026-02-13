@@ -1,0 +1,192 @@
+.about__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.section-subtitle {
+    display: block;
+    color: var(--color-primary-start);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-dark);
+}
+
+.section-title-sm {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--color-primary-end);
+}
+
+.about__text {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: var(--color-text-body);
+}
+
+.about__list {
+    margin-bottom: 2rem;
+}
+
+.about__list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+.about__list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4facfe;
+    font-weight: bold;
+}
+
+/* Dates Side Panel */
+.about__dates-wrapper {
+    position: sticky;
+    top: 100px;
+}
+
+.premium-dates-container {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+}
+
+.premium-header {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.premium-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin: 0;
+}
+
+.header-decoration {
+    width: 60px;
+    height: 4px;
+    background: var(--color-primary-gradient);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.premium-dates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.premium-date-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #f8faff;
+    border-radius: var(--radius-md);
+    position: relative;
+    transition: all 0.3s ease;
+    border-left: 5px solid #4facfe;
+    overflow: hidden;
+}
+
+.premium-date-card:hover {
+    transform: translateX(10px);
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-card {
+    background: var(--color-primary-start);
+    color: white;
+    border-left-color: #f093fb;
+}
+
+.highlight-card:hover {
+    background: var(--color-primary-start);
+}
+
+.pd-date-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 65px;
+    height: 65px;
+    background: white;
+    border-radius: 12px;
+    color: var(--color-primary-start);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pd-month {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.pd-day {
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.pd-content {
+    flex: 1;
+}
+
+.pd-year {
+    font-size: 0.85rem;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.pd-event {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 2px 0;
+}
+
+.pd-sub {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.highlight-card .pd-content {
+    color: white;
+}
+
+.pd-icon-bg {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.05;
+    color: var(--color-primary-start);
+}
+
+.highlight-card .pd-icon-bg {
+    color: white;
+    opacity: 0.1;
+}
+
+@media (max-width: 992px) {
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}

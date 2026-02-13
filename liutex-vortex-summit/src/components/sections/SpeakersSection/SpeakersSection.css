@@ -1,0 +1,148 @@
+.speakers__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.speaker-card {
+    background: #fff;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.speaker-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.speaker-img-wrapper {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.speaker-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.speaker-card:hover .speaker-img {
+    transform: scale(1.1);
+}
+
+.speaker-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.speaker-name {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--color-text-dark);
+}
+
+.speaker-title {
+    font-size: 0.9rem;
+    color: var(--color-primary-start);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.speaker-affiliation {
+    font-size: 0.9rem;
+    color: var(--color-text-body);
+    margin-bottom: 20px;
+}
+
+.btn-biograph {
+    background: var(--color-bg-light);
+    color: var(--color-primary-end);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-biograph:hover {
+    background: var(--color-primary-start);
+    color: white;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 600px;
+    border-radius: var(--radius-lg);
+    position: relative;
+    padding: 40px;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-size: 2rem;
+    color: var(--color-text-dark);
+    margin-bottom: 5px;
+}
+
+.modal-type {
+    color: var(--color-primary-start);
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.modal-affiliation-highlight {
+    font-weight: 600;
+    margin: 10px 0 20px;
+    color: var(--color-text-body);
+}
+
+.modal-desc {
+    line-height: 1.8;
+    color: var(--color-text-body);
+}
