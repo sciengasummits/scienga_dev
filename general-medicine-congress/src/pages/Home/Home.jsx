@@ -2,7 +2,7 @@ import React from 'react';
 import HeroSection from '../../components/sections/HeroSection/HeroSection';
 import UniversitiesMarquee from '../../components/sections/UniversitiesMarquee/UniversitiesMarquee';
 import AboutSection from '../../components/sections/AboutSection/AboutSection';
-import ScheduleSection from '../../components/sections/ScheduleSection/ScheduleSection';
+import KeyThemesSection from '../../components/sections/KeyThemesSection/KeyThemesSection';
 import SpeakersSection from '../../components/sections/SpeakersSection/SpeakersSection';
 import VenueSection from '../../components/sections/VenueSection/VenueSection';
 import SponsorsSection from '../../components/sections/SponsorsSection/SponsorsSection';
@@ -17,7 +17,7 @@ const Home = () => {
             <AboutSection />
             <StatsSection />
             <SpeakersSection />
-            <ScheduleSection />
+            <KeyThemesSection showLearnMore={true} />
             <VenueSection />
             <SponsorsSection />
         </div>

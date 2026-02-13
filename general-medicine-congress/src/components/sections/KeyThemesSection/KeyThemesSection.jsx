@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     Stethoscope,
     Heart,
@@ -85,24 +86,29 @@ const scheduleData = {
     ]
 };
 
-const KeyThemesSection = () => {
+const KeyThemesSection = ({ showLearnMore = false }) => {
     const [activeDay, setActiveDay] = useState('day1');
+    const navigate = useNavigate();
+
+    // Limit items if in preview mode (Home page)
+    const displaySessions = showLearnMore ? sessionsData.slice(0, 10) : sessionsData;
+    const displaySchedule = showLearnMore ? scheduleData[activeDay].slice(0, 5) : scheduleData[activeDay];
 
     return (
-        <section className="sessions-schedule-section section-padding" id="sessions">
+        <section className={`sessions-schedule-section section-padding ${showLearnMore ? 'preview-mode' : ''}`} id="sessions">
             <div className="container">
                 <div className="section-header text-center mb-5">
                     <h2 className="section-title">Conference Schedule</h2>
                     <div className="section-line"></div>
                 </div>
 
-                <div className="sessions-schedule-layout">
+                <div className="sessions-schedule-layout" style={showLearnMore ? { overflow: 'hidden' } : {}}>
                     {/* Left Column: Sessions List */}
                     <div className="sessions-column">
                         <h3 className="column-title">Session</h3>
                         <div className="sessions-list-container">
                             <ul className="sessions-list-clean">
-                                {sessionsData.map((session, index) => {
+                                {displaySessions.map((session, index) => {
                                     const Icon = session.icon || Stethoscope;
                                     return (
                                         <li key={index} className="session-item-clean">
@@ -160,7 +166,7 @@ const KeyThemesSection = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {scheduleData[activeDay].map((item, index) => (
+                                        {displaySchedule.map((item, index) => (
                                             <tr key={index}>
                                                 <td className="time-col">
                                                     <div className="time-badge">{item.time}</div>
@@ -177,7 +183,19 @@ const KeyThemesSection = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* Fade Overlay */}
+                    {showLearnMore && <div className="key-themes-fade-overlay"></div>}
                 </div>
+
+                {/* Learn More Button */}
+                {showLearnMore && (
+                    <div className="text-center mt-4">
+                        <button className="btn-learn-more" onClick={() => navigate('/sessions')}>
+                            Learn More
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );
