@@ -1,10 +1,10 @@
-# General Medical Congress
+# Liutex Vortex Summit
 
-A comprehensive web application designed for the General Medical Congress, facilitating event management, attendee registration, and information dissemination.
+A comprehensive web application designed for the Liutex Vortex Summit, facilitating event management, attendee registration, and information dissemination.
 
 ## Features
 
-- **Event Overview**: detailed information about the congress, including theme, mission, and vision.
+- **Event Overview**: Detailed information about the summit, including theme, mission, and vision.
 - **Schedule & Program**: Interactive schedule of events, sessions, and workshops.
 - **Registration System**: User-friendly registration form for attendees.
 - **Venue & Travel**: Information about the venue, location maps, and travel guidelines.
@@ -34,7 +34,7 @@ A comprehensive web application designed for the General Medical Congress, facil
 
 2.  Navigate to the project directory:
     ```bash
-    cd general-medicine-congress
+    cd liutex-vortex-summit
     ```
 
 3.  Install dependencies:
