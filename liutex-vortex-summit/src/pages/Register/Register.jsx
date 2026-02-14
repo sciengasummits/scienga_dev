@@ -252,26 +252,22 @@ Registration Summary:
 
                     {/* New Sponsorship Section matching layout */}
                     <table className="pricing-table sponsorship-table">
-                        <thead>
-                            <tr>
-                                {sponsorshipPricing.map(item => (
-                                    <th key={item.id}>{item.label}</th>
-                                ))}
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
                                 {sponsorshipPricing.map(item => (
                                     <td key={item.id}>
-                                        <label className="radio-label" style={{ justifyContent: 'center' }}>
-                                            <input
-                                                type="radio"
-                                                name="sponsorship"
-                                                checked={selectedSponsorship === item.id}
-                                                onChange={() => setSelectedSponsorship(item.id)}
-                                            />
-                                            ${item.price}
-                                        </label>
+                                        <div className="sponsorship-cell-content">
+                                            <div className="sponsorship-label">{item.label}</div>
+                                            <label className="radio-label" style={{ justifyContent: 'center' }}>
+                                                <input
+                                                    type="radio"
+                                                    name="sponsorship"
+                                                    checked={selectedSponsorship === item.id}
+                                                    onChange={() => setSelectedSponsorship(item.id)}
+                                                />
+                                                ${item.price}
+                                            </label>
+                                        </div>
                                     </td>
                                 ))}
                             </tr>
