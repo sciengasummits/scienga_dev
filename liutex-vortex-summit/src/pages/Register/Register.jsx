@@ -13,8 +13,8 @@ const Register = ({ isDiscounted = false }) => {
         address: ''
     });
 
-    // State for selected items
-    const [selectedItems, setSelectedItems] = useState({});
+    // State for selected academic category (Radio)
+    const [selectedAcademicCategory, setSelectedAcademicCategory] = useState(null);
 
     // State for Terms
     const [termsAccepted, setTermsAccepted] = useState(false);
@@ -40,6 +40,7 @@ const Register = ({ isDiscounted = false }) => {
         { nights: 2, single: 360, double: 400, triple: 440 },
         { nights: 3, single: 540, double: 600, triple: 660 },
         { nights: 4, single: 720, double: 800, triple: 880 },
+        { nights: 5, single: 900, double: 1000, triple: 1100 },
     ];
 
     const sponsorshipPricing = [
@@ -52,16 +53,15 @@ const Register = ({ isDiscounted = false }) => {
     // Helper to calculate total
     const calculateTotal = () => {
         let total = 0;
-        Object.keys(selectedItems).forEach(key => {
-            if (selectedItems[key]) {
-                // Find the item in our lists
-                const item = academicPricing.find(p => p.id === key);
-                if (item) {
-                    // Start with Early Bird per user request/screenshot logic
-                    total += item.early;
-                }
+
+        // Add Academic Registration
+        if (selectedAcademicCategory) {
+            const item = academicPricing.find(p => p.id === selectedAcademicCategory);
+            if (item) {
+                // Start with Early Bird per user request/screenshot logic
+                total += item.early;
             }
-        });
+        }
 
         // Add Sponsorship
         if (selectedSponsorship) {
@@ -86,13 +86,6 @@ const Register = ({ isDiscounted = false }) => {
         }
 
         return total;
-    };
-
-    const handleCheckboxChange = (id) => {
-        setSelectedItems(prev => ({
-            ...prev,
-            [id]: !prev[id]
-        }));
     };
 
     const handleInputChange = (e) => {
@@ -128,7 +121,7 @@ Registration Summary:
             company: '',
             address: ''
         });
-        setSelectedItems({});
+        setSelectedAcademicCategory(null);
         setTermsAccepted(false);
         setIncludeAccompanying(false);
         setSelectedAccommodation(null);
@@ -150,14 +143,20 @@ Registration Summary:
                     {/* Left Side: Form */}
                     <div className="form-section full-width-form">
                         <div className="form-row">
-                            <input
-                                type="text"
+                            <select
                                 name="designation"
-                                placeholder="Designation"
                                 className="form-control"
                                 value={formData.designation}
                                 onChange={handleInputChange}
-                            />
+                            >
+                                <option value="" disabled>Select Designation</option>
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Ms">Ms</option>
+                                <option value="Dr">Dr</option>
+                                <option value="Prof">Prof</option>
+                                <option value="PhD">PhD</option>
+                            </select>
                             <input
                                 type="text"
                                 name="fullName"
@@ -232,11 +231,12 @@ Registration Summary:
                             {academicPricing.map(item => (
                                 <tr key={item.id}>
                                     <td className="item-cell">
-                                        <label className="checkbox-label">
+                                        <label className="radio-label" style={{ justifyContent: 'flex-start' }}>
                                             <input
-                                                type="checkbox"
-                                                checked={!!selectedItems[item.id]}
-                                                onChange={() => handleCheckboxChange(item.id)}
+                                                type="radio"
+                                                name="academicCategory"
+                                                checked={selectedAcademicCategory === item.id}
+                                                onChange={() => setSelectedAcademicCategory(item.id)}
                                             />
                                             {item.label}
                                         </label>
