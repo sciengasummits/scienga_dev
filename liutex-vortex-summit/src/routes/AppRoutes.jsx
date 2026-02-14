@@ -42,6 +42,7 @@ const AppRoutes = () => {
                     <Route path="contact" element={<Contact />} />
                     <Route path="register" element={<Register />} />
                     <Route path="register/discount" element={<Register isDiscounted={true} />} />
+                    <Route path="discount" element={<Register isDiscounted={true} />} />
                     <Route path="brochure" element={<Brochure />} />
                     <Route path="*" element={<div className="section-padding text-center"><h1>404 Not Found</h1></div>} />
                 </Route>

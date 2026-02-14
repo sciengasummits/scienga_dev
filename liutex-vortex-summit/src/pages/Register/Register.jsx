@@ -139,6 +139,26 @@ Registration Summary:
 
             <div className="container section-padding">
 
+                {/* Discount Eligibility Banner - Only show on discount page */}
+                {isDiscounted && (
+                    <div className="discount-banner">
+                        <h2 className="discount-title">🎉 Special Discount - 20% OFF!</h2>
+                        <p className="discount-subtitle">You are eligible for our special discount program</p>
+                        <div className="discount-eligibility">
+                            <h3>Who is Eligible for this Discount?</h3>
+                            <ul className="eligibility-list">
+                                <li>✓ <strong>Students</strong> with valid Student ID Card</li>
+                                <li>✓ <strong>Professors</strong> with valid Faculty ID</li>
+                                <li>✓ <strong>Research Scholars</strong> with institutional proof</li>
+                                <li>✓ <strong>Early Bird Registrants</strong> (Limited time offer)</li>
+                            </ul>
+                            <p className="discount-note">
+                                <strong>Note:</strong> You will be required to present your valid ID card at the time of registration check-in.
+                            </p>
+                        </div>
+                    </div>
+                )}
+
                 <div className="registration-form-container">
                     {/* Left Side: Form */}
                     <div className="form-section full-width-form">
