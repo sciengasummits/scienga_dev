@@ -1,17 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
-// Import meeting images
-import meeting1 from '../../assets/images/meetings/1.jpg'
-import meeting2 from '../../assets/images/meetings/2.jpg'
-import meeting3 from '../../assets/images/meetings/3.jpg'
-import meeting4 from '../../assets/images/meetings/4.jpg'
-import meeting5 from '../../assets/images/meetings/5.jpg'
-import meeting6 from '../../assets/images/meetings/6.jpg'
-import meeting7 from '../../assets/images/meetings/7.jpg'
-import meeting8 from '../../assets/images/meetings/8.jpg'
-import meeting9 from '../../assets/images/meetings/9.jpg'
-import meeting10 from '../../assets/images/meetings/10.jpg'
 import meeting11 from '../../assets/images/meetings/11.jpg'
 import meeting12 from '../../assets/images/meetings/12.jpg'
 import meeting13 from '../../assets/images/meetings/13.jpg'
@@ -24,7 +12,8 @@ const meetingsData = {
             description: "Global Summit on Polymers and Composite Materials",
             location: "AMSTERDAM, NETHERLANDS",
             date: "NOVEMBER 16-18, 2026",
-            image: meeting1
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 2,
@@ -32,7 +21,8 @@ const meetingsData = {
             description: "Global Summit on Advanced Materials and Nanotechnology",
             location: "AMSTERDAM, NETHERLANDS",
             date: "NOVEMBER 16-18, 2026",
-            image: meeting2
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 3,
@@ -40,7 +30,8 @@ const meetingsData = {
             description: "Global Summit on Optics, Photonics and Laser Technology",
             location: "AMSTERDAM, NETHERLANDS",
             date: "NOVEMBER 16-18, 2026",
-            image: meeting3
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 4,
@@ -48,7 +39,8 @@ const meetingsData = {
             description: "Global Summit on Crop Science and Engineering",
             location: "MARINA BAY, SINGAPORE",
             date: "DECEMBER 07-09, 2026",
-            image: meeting4
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 5,
@@ -56,7 +48,8 @@ const meetingsData = {
             description: "Global Summit on Civil Structural and Environmental Science",
             location: "MARINA BAY, SINGAPORE",
             date: "DECEMBER 07-09, 2026",
-            image: meeting5
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 6,
@@ -64,7 +57,8 @@ const meetingsData = {
             description: "Global Summit on Food Science Technology and Agriclulture",
             location: "MARINA BAY, SINGAPORE",
             date: "DECEMBER 07-09, 2026",
-            image: meeting6
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80"
         }
     ],
     2027: [
@@ -74,7 +68,8 @@ const meetingsData = {
             description: "Global Summit on Renewable Energy and Climate Change",
             location: "MUNICH, GERMANY",
             date: "MARCH 23-25, 2027",
-            image: meeting7
+            year: "2027",
+            image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 8,
@@ -82,7 +77,8 @@ const meetingsData = {
             description: "Global Summit on Power Energy and Electrical Engineering",
             location: "MUNICH, GERMANY",
             date: "MARCH 23-25, 2027",
-            image: meeting8
+            year: "2027",
+            image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 9,
@@ -90,7 +86,8 @@ const meetingsData = {
             description: "Global Summit on Clean Energy and Sustainable Technologies",
             location: "MUNICH, GERMANY",
             date: "MARCH 23-25, 2027",
-            image: meeting9
+            year: "2027",
+            image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 10,
@@ -98,56 +95,63 @@ const meetingsData = {
             description: "Global Summit on Astronomy, Astrophysics and Space Science",
             location: "TOKYO, JAPAN",
             date: "APRIL 12-14, 2027",
-            image: meeting10
+            year: "2027",
+            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 11,
             title: "LIUTEXVORTEXSUMMIT2026",
             description: "Global Summit on Liutex and Vortex Identification",
-            location: "TOKYO, JAPAN",
+            location: "CANADA",
             date: "APRIL 12-14, 2027",
+            year: "2027",
             image: meeting11
         },
         {
-            id: 12,
+            id: 13,
             title: "AIROBOTMLSUMMIT2026",
             description: "Global Summit on AI, Robotics, and Machine Learning",
             location: "SEOUL, SOUTH KOREA",
             date: "MAY 10-12, 2027",
+            year: "2027",
             image: meeting12
         },
         {
-            id: 13,
+            id: 14,
             title: "CONDENSEDPHYSSUMMIT2026",
             description: "Global Summit on Condensed Matter & Applied Physics",
             location: "SEOUL, SOUTH KOREA",
             date: "MAY 10-12, 2027",
-            image: meeting13
+            year: "2027",
+            image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80"
         },
         {
-            id: 14,
+            id: 15,
             title: "CYBERQUANTUMSUMMIT2026",
             description: "Global Summit on Cybersecurity and Quantum Computing",
             location: "SEOUL, SOUTH KOREA",
             date: "MAY 10-12, 2027",
-            image: meeting11
+            year: "2027",
+            image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=800&q=80"
         },
         {
-            id: 15,
-            title: "HEALTHMEDSUMMIT2026",
+            id: 16,
+            title: "HEALTHMEDSUMMIT2026/GLOHEALTHSUMMIT2026",
             description: "Global Summit on Public Health and Preventive Medicine",
             location: "LONDON, UK",
             date: "JUNE 07-09, 2027",
-            image: meeting12
+            year: "2027",
+            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
         }
     ],
     2028: [
         {
-            id: 16,
+            id: 12,
             title: "FLUIDTURBOSUMMIT2026",
             description: "Global Summit on Fluid Mechanics and Turbomachinery",
             location: "TOKYO, JAPAN",
             date: "APRIL 12-14, 2028",
+            year: "2028",
             image: meeting13
         }
     ]
@@ -223,7 +227,7 @@ export default function MeetingsSection() {
                                     color: '#0f172a',
                                     boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
                                 }}>
-                                    {meeting.date.split(',')[0]} {/* Short date */}
+                                    {meeting.date}
                                 </div>
                             </div>
 
