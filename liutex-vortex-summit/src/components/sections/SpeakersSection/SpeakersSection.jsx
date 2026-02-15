@@ -35,8 +35,8 @@ const SpeakersSection = () => {
                                 <h3 className="speaker-name">{speaker.name}</h3>
                                 <p className="speaker-title">{speaker.title}</p>
                                 <p className="speaker-affiliation">{speaker.affiliation}</p>
-                                <button className="btn-biograph" onClick={() => openModal(speaker)}>
-                                    <User size={16} /> Biography
+                                <button className="btn-biography" onClick={() => openModal(speaker)}>
+                                    <User size={16} /> BIOGRAPHY
                                 </button>
                             </div>
                         </div>

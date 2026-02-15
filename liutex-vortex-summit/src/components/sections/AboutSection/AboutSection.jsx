@@ -98,7 +98,7 @@ const AboutSection = () => {
                                 <div className="pd-content">
                                     <span className="pd-year">2026</span>
                                     <h4 className="pd-event">Conference Date</h4>
-                                    <span className="pd-sub">December 14-16, Singapore</span>
+                                    <span className="pd-sub">December 14-16, Outram, Singapore</span>
                                 </div>
                                 <div className="pd-icon-bg">
                                     <Star size={40} />

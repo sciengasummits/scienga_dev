@@ -186,6 +186,36 @@ textarea.form-control {
     opacity: 0.9;
 }
 
+/* Active Phase Highlighting */
+.pricing-table th.active-phase {
+    background-color: #ffd700 !important;
+    color: #004d66 !important;
+    position: relative;
+    border-bottom: 3px solid #004d66;
+}
+
+.pricing-table td.active-phase {
+    background-color: rgba(255, 215, 0, 0.08);
+    font-weight: 700;
+    color: #004d66;
+    border-left: 2px solid #ffd700;
+    border-right: 2px solid #ffd700;
+}
+
+.active-badge {
+    position: absolute;
+    top: -12px;
+    right: 5px;
+    background: #d32f2f;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 800;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
 .item-cell {
     font-weight: 500;
     color: #333;
@@ -483,5 +513,30 @@ input[type="radio"]:focus {
     .btn-register,
     .btn-reset {
         width: 100%;
+    }
+}
+
+/* Highlighted price cell when category is selected */
+.highlighted-price {
+    background-color: #fbbf24 !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
+    animation: pulse 0.5s ease;
+}
+
+.selected-row {
+    background-color: rgba(251, 191, 36, 0.1);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
     }
 }
