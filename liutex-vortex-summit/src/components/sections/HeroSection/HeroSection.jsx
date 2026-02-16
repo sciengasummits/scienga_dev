@@ -81,16 +81,20 @@ const HeroSection = () => {
                     </div>
                 </div>
 
-                <div className="hero__info-cards">
-                    <div className="info-card date-card">
-                        <h3>December</h3>
-                        <p>14-16, 2026</p>
-                    </div>
+                <div className="hero__info-cards-wrapper">
+                    <div className="hero__info-cards overlapping-style">
+                        <div className="info-card date-card">
+                            <h3>December</h3>
+                            <p>14-16, 2026</p>
+                        </div>
 
-                    <div className="info-card venue-card">
-                        <h3>Venue</h3>
-                        <p>Singapore EXPO</p>
-                        <p>Singapore</p>
+                        <div className="info-card venue-card">
+                            <h3>Venue</h3>
+                            <div className="venue-details">
+                                <p className="venue-label">Event Venue: Outram</p>
+                                <p className="venue-location">Singapore</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

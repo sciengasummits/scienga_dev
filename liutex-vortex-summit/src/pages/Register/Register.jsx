@@ -50,6 +50,22 @@ const Register = ({ isDiscounted = false }) => {
         { id: 'exhibitor', label: 'Exhibitor', price: applyDiscount(1999) },
     ];
 
+    // Determine the current fee phase based on date
+    const getPhase = () => {
+        const now = new Date();
+        const oct25 = new Date(2025, 9, 25); // Oct 25, 2025
+        const feb16 = new Date(2026, 1, 16); // Feb 16, 2026
+        const april1 = new Date(2026, 3, 1); // April 1, 2026
+
+        if (now <= oct25) return 'early';
+        if (now <= feb16) return 'standard';
+        // User request: "next from april it chosses as standards fee"
+        if (now >= april1) return 'standard';
+        return 'onspot';
+    };
+
+    const currentPhase = getPhase();
+
     // Helper to calculate total
     const calculateTotal = () => {
         let total = 0;
@@ -58,8 +74,8 @@ const Register = ({ isDiscounted = false }) => {
         if (selectedAcademicCategory) {
             const item = academicPricing.find(p => p.id === selectedAcademicCategory);
             if (item) {
-                // Start with Early Bird per user request/screenshot logic
-                total += item.early;
+                // Select fee based on current date phase
+                total += item[currentPhase];
             }
         }
 
@@ -138,6 +154,26 @@ Registration Summary:
             </div>
 
             <div className="container section-padding">
+
+                {/* Discount Eligibility Banner - Only show on discount page */}
+                {isDiscounted && (
+                    <div className="discount-banner">
+                        <h2 className="discount-title">🎉 Special Discount - 20% OFF!</h2>
+                        <p className="discount-subtitle">You are eligible for our special discount program</p>
+                        <div className="discount-eligibility">
+                            <h3>Who is Eligible for this Discount?</h3>
+                            <ul className="eligibility-list">
+                                <li>✓ <strong>Students</strong> with valid Student ID Card</li>
+                                <li>✓ <strong>Professors</strong> with valid Faculty ID</li>
+                                <li>✓ <strong>Research Scholars</strong> with institutional proof</li>
+                                <li>✓ <strong>Early Bird Registrants</strong> (Limited time offer)</li>
+                            </ul>
+                            <p className="discount-note">
+                                <strong>Note:</strong> You will be required to present your valid ID card at the time of registration check-in.
+                            </p>
+                        </div>
+                    </div>
+                )}
 
                 <div className="registration-form-container">
                     {/* Left Side: Form */}
@@ -222,14 +258,26 @@ Registration Summary:
                         <thead>
                             <tr>
                                 <th className="category-header">Academic</th>
-                                <th>Early Bird Registration<br /><span className="date">October 25, 2025</span></th>
-                                <th>Standard Registration<br /><span className="date">February 16, 2026</span></th>
-                                <th>OnSpot Registration<br /><span className="date">April 20, 2026</span></th>
+                                <th className={currentPhase === 'early' ? 'active-phase' : ''}>
+                                    Early Bird Registration<br />
+                                    <span className="date">October 25, 2025</span>
+                                    {currentPhase === 'early' && <span className="active-badge">ACTIVE</span>}
+                                </th>
+                                <th className={currentPhase === 'standard' ? 'active-phase' : ''}>
+                                    Standard Registration<br />
+                                    <span className="date">February 16, 2026</span>
+                                    {currentPhase === 'standard' && <span className="active-badge">ACTIVE</span>}
+                                </th>
+                                <th className={currentPhase === 'onspot' ? 'active-phase' : ''}>
+                                    OnSpot Registration<br />
+                                    <span className="date">April 20, 2026</span>
+                                    {currentPhase === 'onspot' && <span className="active-badge">ACTIVE</span>}
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             {academicPricing.map(item => (
-                                <tr key={item.id}>
+                                <tr key={item.id} className={selectedAcademicCategory === item.id ? 'selected-row' : ''}>
                                     <td className="item-cell">
                                         <label className="radio-label" style={{ justifyContent: 'flex-start' }}>
                                             <input
@@ -241,9 +289,9 @@ Registration Summary:
                                             {item.label}
                                         </label>
                                     </td>
-                                    <td>$ {item.early}</td>
-                                    <td>$ {item.standard}</td>
-                                    <td>$ {item.onspot}</td>
+                                    <td className={`${currentPhase === 'early' ? 'active-phase' : ''} ${selectedAcademicCategory === item.id && currentPhase === 'early' ? 'highlighted-price' : ''}`}>$ {item.early}</td>
+                                    <td className={`${currentPhase === 'standard' ? 'active-phase' : ''} ${selectedAcademicCategory === item.id && currentPhase === 'standard' ? 'highlighted-price' : ''}`}>$ {item.standard}</td>
+                                    <td className={`${currentPhase === 'onspot' ? 'active-phase' : ''} ${selectedAcademicCategory === item.id && currentPhase === 'onspot' ? 'highlighted-price' : ''}`}>$ {item.onspot}</td>
                                 </tr>
                             ))}
                         </tbody>

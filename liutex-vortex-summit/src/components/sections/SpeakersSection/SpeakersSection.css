@@ -1,27 +1,42 @@
 .speakers__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .speakers__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .speakers__grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .speaker-card {
     background: #fff;
-    border-radius: var(--radius-md);
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
-    border: 1px solid #eee;
+    border: 1px solid #e5e7eb;
 }
 
 .speaker-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
 .speaker-img-wrapper {
     position: relative;
-    height: 350px;
+    height: 280px;
     overflow: hidden;
+    background: #f3f4f6;
 }
 
 .speaker-img {
@@ -32,50 +47,55 @@
 }
 
 .speaker-card:hover .speaker-img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .speaker-info {
-    padding: 25px;
+    padding: 24px 20px;
     text-align: center;
 }
 
 .speaker-name {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-    color: var(--color-text-dark);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1f2937;
 }
 
 .speaker-title {
-    font-size: 0.9rem;
-    color: var(--color-primary-start);
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 5px;
+    font-size: 0.875rem;
+    color: #6366f1;
+    font-weight: 600;
+    margin-bottom: 6px;
+    line-height: 1.4;
 }
 
 .speaker-affiliation {
-    font-size: 0.9rem;
-    color: var(--color-text-body);
-    margin-bottom: 20px;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 18px;
+    line-height: 1.4;
 }
 
-.btn-biograph {
-    background: var(--color-bg-light);
-    color: var(--color-primary-end);
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 0.85rem;
+.btn-biography {
+    background: #6366f1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.btn-biograph:hover {
-    background: var(--color-primary-start);
-    color: white;
+.btn-biography:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 /* Modal */

@@ -18,6 +18,78 @@
     margin-bottom: 3rem;
 }
 
+/* Discount Banner */
+.discount-banner {
+    background: linear-gradient(135deg, #004d66 0%, #006b7d 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 77, 102, 0.3);
+}
+
+.discount-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #fff;
+}
+
+.discount-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.discount-eligibility {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.discount-eligibility h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.eligibility-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.eligibility-list li {
+    padding: 0.75rem 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.eligibility-list li:last-child {
+    border-bottom: none;
+}
+
+.eligibility-list li strong {
+    color: #ffd700;
+}
+
+.discount-note {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 215, 0, 0.15);
+    border-left: 4px solid #ffd700;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.discount-note strong {
+    color: #ffd700;
+}
+
 .form-section {
     flex: 2;
     min-width: 300px;
@@ -112,6 +184,36 @@ textarea.form-control {
     margin-top: 0.5rem;
     font-weight: 400;
     opacity: 0.9;
+}
+
+/* Active Phase Highlighting */
+.pricing-table th.active-phase {
+    background-color: #ffd700 !important;
+    color: #004d66 !important;
+    position: relative;
+    border-bottom: 3px solid #004d66;
+}
+
+.pricing-table td.active-phase {
+    background-color: rgba(255, 215, 0, 0.08);
+    font-weight: 700;
+    color: #004d66;
+    border-left: 2px solid #ffd700;
+    border-right: 2px solid #ffd700;
+}
+
+.active-badge {
+    position: absolute;
+    top: -12px;
+    right: 5px;
+    background: #d32f2f;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 800;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
 }
 
 .item-cell {
@@ -297,23 +399,26 @@ textarea.form-control {
     font-weight: 500;
 }
 
-.radio-label input[type="radio"] {
+/* Radio button styling - applies to all radio inputs */
+input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
     width: 18px;
     height: 18px;
     border: 2px solid #004d66;
     border-radius: 50%;
     cursor: pointer;
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     margin-right: 8px;
     flex-shrink: 0;
+    vertical-align: middle;
 }
 
-.radio-label input[type="radio"]:checked::after {
+input[type="radio"]:checked::after {
     content: "";
     width: 10px;
     height: 10px;
@@ -322,9 +427,13 @@ textarea.form-control {
     display: block;
 }
 
-.radio-label input[type="radio"]:focus {
+input[type="radio"]:focus {
     outline: 2px solid rgba(0, 77, 102, 0.2);
     outline-offset: 2px;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 8px;
 }
 
 
@@ -338,6 +447,22 @@ textarea.form-control {
         font-size: 1.75rem;
         text-align: center;
         margin-bottom: 1.5rem;
+    }
+
+    .discount-banner {
+        padding: 1.5rem;
+    }
+
+    .discount-title {
+        font-size: 1.5rem;
+    }
+
+    .discount-subtitle {
+        font-size: 1rem;
+    }
+
+    .eligibility-list li {
+        font-size: 0.95rem;
     }
 
     .accommodation-table {
@@ -388,5 +513,30 @@ textarea.form-control {
     .btn-register,
     .btn-reset {
         width: 100%;
+    }
+}
+
+/* Highlighted price cell when category is selected */
+.highlighted-price {
+    background-color: #fbbf24 !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
+    animation: pulse 0.5s ease;
+}
+
+.selected-row {
+    background-color: rgba(251, 191, 36, 0.1);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
     }
 }
