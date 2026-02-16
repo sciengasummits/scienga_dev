@@ -72,7 +72,7 @@ export default function Footer() {
 
         {/* Brand Column */}
         <div className="footer-col" style={{ display: 'flex', flexDirection: 'column' }}>
-          <img src={logo} alt="Scienga Summits" style={{ maxWidth: '200px', marginBottom: '1rem' }} />
+          <img src={logo} alt="Scienga Summits" style={{ maxWidth: '280px', marginBottom: '1rem' }} />
           <p style={{ lineHeight: '1.6', fontSize: '0.85rem', maxWidth: '300px', marginBottom: '1.5rem', color: '#cbd5e1' }}>
             Bridging academic research and industrial application for a sustainable, innovative tomorrow.
           </p>

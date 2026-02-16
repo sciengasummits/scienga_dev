@@ -21,15 +21,39 @@ export default function HeroSection() {
     }}>
 
       {/* 3D Animated Globe Background */}
-      <div style={{
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%) scale(2.8)', // Scale up to fill more space
-        zIndex: 0,
-        opacity: 0.6, // Adjust visibility
-        pointerEvents: 'none'
-      }}>
+      <style>
+        {`
+          .hero-globe-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2.8);
+            z-index: 0;
+            opacity: 0.6;
+            pointer-events: none;
+          }
+          @media (max-width: 1200px) {
+            .hero-globe-wrapper {
+              transform: translate(-50%, -50%) scale(2.2);
+            }
+          }
+          @media (max-width: 768px) {
+            .hero-globe-wrapper {
+              transform: translate(-50%, -50%) scale(1.5);
+              opacity: 0.4;
+            }
+          }
+          @media (max-width: 480px) {
+            .hero-globe-wrapper {
+              transform: translate(-50%, -50%) scale(1.1); /* Much smaller on mobile */
+              opacity: 0.3; /* Less intrusive on small screens */
+            }
+          }
+        `}
+      </style>
+
+      {/* 3D Animated Globe Background */}
+      <div className="hero-globe-wrapper">
         <GlobeAnimation />
       </div>
 
