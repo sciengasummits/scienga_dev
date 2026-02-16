@@ -58,7 +58,8 @@ const meetingsData = {
             location: "MARINA BAY, SINGAPORE",
             date: "DECEMBER 07-09, 2026",
             year: "2026",
-            image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80",
+            link: "https://foodagrisummit2026.sciengasummits.com/"
         }
     ],
     2027: [
@@ -105,7 +106,8 @@ const meetingsData = {
             location: "CANADA",
             date: "APRIL 12-14, 2027",
             year: "2027",
-            image: meeting11
+            image: meeting11,
+            link: "https://liutexvortexsummit2026.sciengasummits.com/"
         },
         {
             id: 13,
@@ -261,37 +263,46 @@ export default function MeetingsSection() {
                                     {meeting.description.length > 80 ? meeting.description.substring(0, 80) + '...' : meeting.description}
                                 </p>
 
-                                <Link to="#" style={{
-                                    alignSelf: 'start',
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    gap: '8px',
-                                    backgroundColor: primaryColor,
-                                    color: 'white',
-                                    fontWeight: '600',
-                                    fontSize: '1rem',
-                                    textDecoration: 'none',
-                                    padding: '12px 24px',
-                                    borderRadius: '50px',
-                                    transition: 'all 0.3s ease',
-                                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                                }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.transform = 'translateY(-2px)';
-                                        e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-                                        e.currentTarget.style.filter = 'brightness(110%)';
-                                        e.currentTarget.querySelector('span').style.transform = 'translateX(4px)';
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.transform = 'translateY(0)';
-                                        e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
-                                        e.currentTarget.style.filter = 'brightness(100%)';
-                                        e.currentTarget.querySelector('span').style.transform = 'translateX(0)';
-                                    }}
-                                >
-                                    Learn More <span style={{ fontSize: '1.2rem', transition: 'transform 0.3s ease' }}>→</span>
-                                </Link>
+                                {(() => {
+                                    const Tag = meeting.link ? 'a' : Link;
+                                    const linkProps = meeting.link
+                                        ? { href: meeting.link, target: "_blank", rel: "noopener noreferrer" }
+                                        : { to: "#" };
+
+                                    return (
+                                        <Tag {...linkProps} style={{
+                                            alignSelf: 'start',
+                                            display: 'inline-flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            gap: '8px',
+                                            backgroundColor: primaryColor,
+                                            color: 'white',
+                                            fontWeight: '600',
+                                            fontSize: '1rem',
+                                            textDecoration: 'none',
+                                            padding: '12px 24px',
+                                            borderRadius: '50px',
+                                            transition: 'all 0.3s ease',
+                                            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                                                e.currentTarget.style.filter = 'brightness(110%)';
+                                                e.currentTarget.querySelector('span').style.transform = 'translateX(4px)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                                                e.currentTarget.style.filter = 'brightness(100%)';
+                                                e.currentTarget.querySelector('span').style.transform = 'translateX(0)';
+                                            }}
+                                        >
+                                            Learn More <span style={{ fontSize: '1.2rem', transition: 'transform 0.3s ease' }}>→</span>
+                                        </Tag>
+                                    );
+                                })()}
                             </div>
                         </div>
                     ))}
