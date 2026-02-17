@@ -1,0 +1,46 @@
+import React, { useRef } from 'react';
+import Button from '../../common/Button/Button';
+import './BrochureSection.css';
+
+const BrochureSection = () => {
+    const handleDownload = () => {
+        window.open('/brochure.pdf', '_blank');
+    };
+
+    return (
+        <section className="brochure-section section-padding" id="brochure">
+            <div className="container brochure__container">
+                <div className="brochure__content">
+                    <h2 className="section-title">Conference Brochure</h2>
+                    <p className="brochure__description">
+                        Download the official conference brochure to get detailed information about:
+                        <ul>
+                            <li>Comprehensive Event Program</li>
+                            <li>Quantum Security Keynotes</li>
+                            <li>Live Hacking Workshops</li>
+                            <li>Global Networking Sessions</li>
+                            <li>Sponsorship & Exhibition Details</li>
+                        </ul>
+                    </p>
+                    <div className="brochure__cta">
+                        <Button onClick={handleDownload} size="large">
+                            Download Brochure (PDF)
+                        </Button>
+                    </div>
+                </div>
+                <div className="brochure__preview">
+                    {/* Placeholder for brochure preview image */}
+                    <div className="preview-card">
+                        <div className="preview-page">
+                            <h3>CYBERSECURITY & QUANTUM SUMMIT</h3>
+                            <p>2026</p>
+                            <div className="preview-lines"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default BrochureSection;

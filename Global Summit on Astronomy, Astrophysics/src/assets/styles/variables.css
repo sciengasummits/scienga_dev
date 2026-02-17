@@ -1,0 +1,89 @@
+:root {
+  --color-primary-start: #0f172a;
+  /* Slate 900 - Deep Space */
+  --color-primary-end: #1e1b4b;
+  /* Indigo 950 - Void */
+  --color-primary-gradient: linear-gradient(135deg, var(--color-primary-start) 0%, var(--color-primary-end) 100%);
+  --color-accent: #38bdf8;
+  /* Sky 400 - Starlight Blue */
+  --color-accent-glow: rgba(56, 189, 248, 0.4);
+  --color-orange-gradient: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+  /* Sky to Indigo Gradient */
+  --color-text-header: #f8fafc;
+  /* Slate 50 - Bright White */
+  --color-text-body: #cbd5e1;
+  /* Slate 300 - readable grey */
+  --color-text-muted: #64748b;
+  /* Slate 500 */
+  --color-bg-light: #0f172a;
+  /* Slate 900 */
+  --color-bg-dark: #020617;
+  /* Slate 950 - Void Black */
+  --color-bg-cosmic: radial-gradient(circle at center, #1e1b4b 0%, #020617 100%);
+  --color-white: #ffffff;
+  --color-primary-rgb: 15, 23, 42;
+
+  --font-primary: 'Inter', sans-serif;
+  --font-heading: 'Rajdhani', sans-serif;
+
+  --navbar-bg: rgba(2, 6, 23, 0.9);
+  /* Slate 950 with opacity */
+
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --transition-default: all 0.3s ease-in-out;
+  --transition-cosmic: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Cosmic Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition-cosmic);
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cosmic-card-glass {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px var(--color-accent-glow);
+}

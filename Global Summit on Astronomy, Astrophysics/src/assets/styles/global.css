@@ -1,0 +1,205 @@
+@import './variables.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text-body);
+    line-height: 1.6;
+    background-color: var(--color-bg-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--color-text-header);
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-default);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gradient-text {
+    background: var(--color-primary-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Page Header Generic Styles */
+.page-header {
+    background:
+        linear-gradient(135deg, rgba(20, 10, 40, 0.8) 0%, rgba(10, 5, 20, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%),
+        url('https://images.unsplash.com/photo-1506318137071-a8e063b4b504?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-white);
+    padding: 130px 0 45px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Animated stars overlay */
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(2px 2px at 90% 60%, white, transparent),
+        radial-gradient(1px 1px at 33% 80%, white, transparent),
+        radial-gradient(1px 1px at 15% 90%, white, transparent);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    opacity: 0.6;
+    animation: twinkle 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Cosmic glow effect */
+.page-header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+    animation: cosmicGlow 15s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes cosmicGlow {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(10%, 10%) scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section-padding {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+        /* Global scale down for very small screens */
+    }
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+    font-weight: 800;
+    text-transform: capitalize;
+    letter-spacing: -1px;
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.5),
+        0 0 20px var(--color-accent-glow);
+    position: relative;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+}
+
+.page-breadcrumb {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 3;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
