@@ -1,0 +1,267 @@
+.brochure-page {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+}
+
+.brochure-content {
+    background-color: transparent;
+}
+
+/* Top Layout Split Pattern */
+.brochure-top-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.brochure-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.brochure-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--color-text-body);
+}
+
+.brochure-features-list svg {
+    color: var(--color-accent);
+}
+
+.download-btn-cosmic {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--color-orange-gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.view-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border: 2px solid var(--color-primary-start);
+    color: var(--color-primary-start);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+}
+
+.download-btn-cosmic:hover,
+.view-btn-outline:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--color-accent-glow);
+}
+
+/* 3D Preview Card */
+.brochure-preview-col {
+    display: flex;
+    justify-content: center;
+}
+
+.preview-card-3d {
+    width: 300px;
+    height: 420px;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    overflow: hidden;
+}
+
+.preview-card-3d svg {
+    margin-bottom: 2rem;
+    color: var(--color-accent);
+}
+
+.preview-card-3d h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.card-glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Tracks Grid Pattern (Like Sessions) */
+.tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.track-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.track-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.track-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+}
+
+.track-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--color-text-dark);
+}
+
+.track-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-body);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .brochure-top-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .brochure-features-list li {
+        justify-content: center;
+    }
+
+    .view-btn-outline {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    .brochure-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .brochure-grid {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .brochure-features li {
+        justify-content: center;
+    }
+
+    .brochure-actions {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+/* Extra Sections Styles */
+.brochure-extra-sections {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.brochure-msg-box {
+    background: #f8f9fa;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid #eee;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+}
+
+.benefit-item h4 {
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+}
+
+.benefit-item p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.who-attend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.attendee-card {
+    background: var(--color-orange-gradient);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.attendee-card:hover {
+    transform: translateY(-5px);
+}
+
+.attendee-card h4 {
+    color: white;
+    font-size: 1.250rem;
+    margin-bottom: 1rem;
+}
+
+.attendee-card p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
