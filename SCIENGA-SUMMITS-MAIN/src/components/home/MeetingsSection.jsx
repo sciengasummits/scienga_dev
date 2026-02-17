@@ -70,7 +70,8 @@ const meetingsData = {
             location: "MUNICH, GERMANY",
             date: "MARCH 23-25, 2027",
             year: "2027",
-            image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80",
+            link: "https://reneclimsummit2026.sciengasummits.com/"
         },
         {
             id: 8,
@@ -79,7 +80,8 @@ const meetingsData = {
             location: "MUNICH, GERMANY",
             date: "MARCH 23-25, 2027",
             year: "2027",
-            image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+            link: "https://powerengsummit2026.sciengasummits.com/"
         },
         {
             id: 9,
@@ -97,7 +99,8 @@ const meetingsData = {
             location: "TOKYO, JAPAN",
             date: "APRIL 12-14, 2027",
             year: "2027",
-            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+            link: "https://astrospacesummit2026.sciengasummits.com/"
         },
         {
             id: 11,
@@ -143,7 +146,8 @@ const meetingsData = {
             location: "LONDON, UK",
             date: "JUNE 07-09, 2027",
             year: "2027",
-            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+            link: "https://healthmedsummit2026.sciengasummits.com/"
         }
     ],
     2028: [
