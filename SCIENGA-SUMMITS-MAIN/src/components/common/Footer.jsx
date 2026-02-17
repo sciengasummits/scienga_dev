@@ -94,23 +94,30 @@ export default function Footer() {
 
           <div style={{ display: 'flex', gap: '0.75rem' }}>
             {[
+              { icon: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>, href: 'https://www.facebook.com/profile.php?id=61588065033161' },
+              { icon: <><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></>, href: 'https://www.instagram.com/sciengasummits/' },
               { icon: <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>, href: '#' },
               { icon: <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z M2 9h4v12H2z M4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z"></path>, href: '#' },
-              { icon: <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>, stroke: true, href: '#' }
+              { icon: <><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path><path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></>, href: 'https://wa.me/917842090097' }
             ].map((social, idx) => (
-              <a href={social.href} key={idx} style={{
-                width: '32px', // Smaller icon
-                height: '32px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(255,255,255,0.05)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease',
-                border: '1px solid rgba(255,255,255,0.1)'
-              }}
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={idx}
+                style={{
+                  width: '32px', // Smaller icon
+                  height: '32px',
+                  borderRadius: '50%',
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease',
+                  border: '1px solid rgba(255,255,255,0.1)'
+                }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = primaryColor;
                   e.currentTarget.style.borderColor = primaryColor;
