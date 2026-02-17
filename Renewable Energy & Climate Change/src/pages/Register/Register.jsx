@@ -274,13 +274,13 @@ Registration Summary:
                                             {item.label}
                                         </label>
                                     </td>
-                                    <td className={`${activePhase === 'early' ? 'active-cell-early' : ''} ${activePhase === 'early' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
+                                    <td className={`${activePhase === 'early' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
                                         <span className={activePhase === 'early' ? 'price-active' : ''}>$ {item.early}</span>
                                     </td>
-                                    <td className={`${activePhase === 'standard' ? 'active-cell-standard' : ''} ${activePhase === 'standard' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
+                                    <td className={`${activePhase === 'standard' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
                                         <span className={activePhase === 'standard' ? 'price-active' : ''}>$ {item.standard}</span>
                                     </td>
-                                    <td className={`${activePhase === 'onspot' ? 'active-cell-onspot' : ''} ${activePhase === 'onspot' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
+                                    <td className={`${activePhase === 'onspot' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
                                         <span className={activePhase === 'onspot' ? 'price-active' : ''}>$ {item.onspot}</span>
                                     </td>
                                 </tr>

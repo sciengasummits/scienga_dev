@@ -92,9 +92,10 @@ a {
     display: none !important;
   }
 
-  /* Navbar Mobile Centering */
+
+  /* Navbar Mobile Layout */
   .nav-container {
-    justify-content: center !important;
+    justify-content: space-between !important;
   }
 
   .nav-logo {
@@ -102,8 +103,7 @@ a {
   }
 
   .nav-toggle {
-    position: absolute;
-    right: 20px;
+    position: static;
   }
 
   /* Footer Mobile Centering */
