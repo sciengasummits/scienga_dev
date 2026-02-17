@@ -21,7 +21,7 @@ const SpeakersSection = () => {
             <div className="container">
                 <div className="text-center mb-5">
                     <h4 className="section-subtitle">Meet The Experts</h4>
-                    <h2 className="section-title">Distinguished Speakers</h2>
+                    <h2 className="section-title">Global Participants</h2>
                 </div>
 
                 <div className="speakers__grid">
@@ -34,6 +34,7 @@ const SpeakersSection = () => {
                                 </div>
                             </div>
                             <div className="speaker-info">
+                                {speaker.category && <span className="speaker-category">{speaker.category}</span>}
                                 <h3 className="speaker-name">{speaker.name}</h3>
                                 <p className="speaker-title">{speaker.title}</p>
                                 <p className="speaker-affiliation">{speaker.affiliation}</p>
@@ -54,6 +55,7 @@ const SpeakersSection = () => {
                             <button className="modal-close" onClick={closeModal}>&times;</button>
 
                             <div className="modal-body">
+                                {selectedSpeaker.category && <p className="modal-category">{selectedSpeaker.category}</p>}
                                 <h3 className="modal-title">{selectedSpeaker.name}</h3>
                                 <span className="modal-type">{selectedSpeaker.title}</span>
                                 <p className="modal-affiliation-highlight">{selectedSpeaker.affiliation}</p>

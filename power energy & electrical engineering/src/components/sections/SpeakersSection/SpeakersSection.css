@@ -51,6 +51,18 @@
     align-items: center;
 }
 
+.speaker-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary-end);
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+    background: rgba(204, 139, 30, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
 .speaker-name {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
@@ -168,9 +180,23 @@
     font-weight: 700;
 }
 
+.modal-category {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-white);
+    background: var(--color-primary-end);
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 .modal-type {
     font-size: 1rem;
-    color: var(--color-primary-end);
+    color: var(--color-text-dark);
+    /* Changed to dark text as primary color is now used for category */
     font-weight: 600;
     margin-bottom: 0.5rem;
     display: block;
