@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import meeting11 from '../../assets/images/meetings/11.jpg'
+import meetingLiutex from '../../assets/images/meetings/liutexvortex.jpg'
 import meeting12 from '../../assets/images/meetings/12.jpg'
 import meeting13 from '../../assets/images/meetings/13.jpg'
 
@@ -106,7 +106,7 @@ const meetingsData = {
             location: "CANADA",
             date: "APRIL 12-14, 2027",
             year: "2027",
-            image: meeting11,
+            image: meetingLiutex,
             link: "https://liutexvortexsummit2026.sciengasummits.com/"
         },
         {
@@ -299,7 +299,7 @@ export default function MeetingsSection() {
                                                 e.currentTarget.querySelector('span').style.transform = 'translateX(0)';
                                             }}
                                         >
-                                            Learn More <span style={{ fontSize: '1.2rem', transition: 'transform 0.3s ease' }}>→</span>
+                                            Know More <span style={{ fontSize: '1.2rem', transition: 'transform 0.3s ease' }}>→</span>
                                         </Tag>
                                     );
                                 })()}

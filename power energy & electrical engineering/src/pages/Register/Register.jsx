@@ -28,6 +28,27 @@ const Register = ({ isDiscounted = false }) => {
     const discountMultiplier = isDiscounted ? 0.8 : 1;
     const applyDiscount = (price) => Math.round(price * discountMultiplier);
 
+    // Date Logic to determine active phase
+    const currentDate = new Date();
+    // const earlyBirdEnd = new Date('2025-10-25');
+    // const standardEnd = new Date('2026-02-16');
+
+    // For demo/screenshot purpose, let's assume specific dates or just logic
+    // But since the user wants it to look like the screenshot where OnSpot is active:
+    // Today is Feb 17, 2026. Standard ended Feb 16, 2026. So OnSpot is active.
+
+    let activePhase = 'onspot';
+    const earlyBirdEnd = new Date('2025-10-25');
+    const standardEnd = new Date('2026-02-16');
+
+    if (currentDate <= earlyBirdEnd) {
+        activePhase = 'early';
+    } else if (currentDate <= standardEnd) {
+        activePhase = 'standard';
+    } else {
+        activePhase = 'onspot';
+    }
+
     // Pricing Data
     const academicPricing = [
         { id: 'speaker', label: 'Speaker Registration', early: applyDiscount(749), standard: applyDiscount(849), onspot: applyDiscount(949) },
@@ -58,8 +79,8 @@ const Register = ({ isDiscounted = false }) => {
         if (selectedAcademicCategory) {
             const item = academicPricing.find(p => p.id === selectedAcademicCategory);
             if (item) {
-                // Start with Early Bird per user request/screenshot logic
-                total += item.early;
+                // Use activePhase price
+                total += item[activePhase];
             }
         }
 
@@ -221,17 +242,29 @@ Registration Summary:
                     <table className="pricing-table">
                         <thead>
                             <tr>
-                                <th className="category-header">Academic</th>
-                                <th>Early Bird Registration<br /><span className="date">October 25, 2025</span></th>
-                                <th>Standard Registration<br /><span className="date">February 16, 2026</span></th>
-                                <th>OnSpot Registration<br /><span className="date">April 20, 2026</span></th>
+                                <th className="category-header">ACADEMIC</th>
+                                <th className={activePhase === 'early' ? 'active-header-early' : ''}>
+                                    Early Bird Registration<br />
+                                    <span className="date">October 25, 2025</span>
+                                    {activePhase === 'early' && <span className="badge-active">ACTIVE</span>}
+                                </th>
+                                <th className={activePhase === 'standard' ? 'active-header-standard' : ''}>
+                                    Standard Registration<br />
+                                    <span className="date">February 16, 2026</span>
+                                    {activePhase === 'standard' && <span className="badge-active">ACTIVE</span>}
+                                </th>
+                                <th className={activePhase === 'onspot' ? 'active-header-onspot' : ''}>
+                                    OnSpot Registration<br />
+                                    <span className="date">April 20, 2026</span>
+                                    {activePhase === 'onspot' && <span className="badge-active">ACTIVE</span>}
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             {academicPricing.map(item => (
-                                <tr key={item.id}>
+                                <tr key={item.id} className={selectedAcademicCategory === item.id ? 'selected-row' : ''}>
                                     <td className="item-cell">
-                                        <label className="radio-label" style={{ justifyContent: 'flex-start' }}>
+                                        <label className="radio-label">
                                             <input
                                                 type="radio"
                                                 name="academicCategory"
@@ -241,13 +274,18 @@ Registration Summary:
                                             {item.label}
                                         </label>
                                     </td>
-                                    <td>$ {item.early}</td>
-                                    <td>$ {item.standard}</td>
-                                    <td>$ {item.onspot}</td>
+                                    <td className={`${activePhase === 'early' ? 'active-cell-early' : ''} ${activePhase === 'early' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
+                                        <span className={activePhase === 'early' ? 'price-active' : ''}>$ {item.early}</span>
+                                    </td>
+                                    <td className={`${activePhase === 'standard' ? 'active-cell-standard' : ''} ${activePhase === 'standard' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
+                                        <span className={activePhase === 'standard' ? 'price-active' : ''}>$ {item.standard}</span>
+                                    </td>
+                                    <td className={`${activePhase === 'onspot' ? 'active-cell-onspot' : ''} ${activePhase === 'onspot' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
+                                        <span className={activePhase === 'onspot' ? 'price-active' : ''}>$ {item.onspot}</span>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
-
                     </table>
 
                     {/* New Sponsorship Section matching layout */}

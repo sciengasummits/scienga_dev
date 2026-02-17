@@ -167,6 +167,19 @@ const AbstractSubmission = () => {
                                 ></textarea>
                             </div>
 
+                            <div className="form-group full-width">
+                                <div className="file-upload-container">
+                                    <input
+                                        type="file"
+                                        name="file"
+                                        className="form-control-file"
+                                        accept=".doc,.docx,.pdf,.zip"
+                                        onChange={handleChange}
+                                    />
+                                    <p className="file-upload-note">Note: (.doc), (.docx), (.pdf) and (.zip) files only.</p>
+                                </div>
+                            </div>
+
                             <div className="form-actions">
                                 <Button type="submit">Submit Abstract</Button>
                             </div>

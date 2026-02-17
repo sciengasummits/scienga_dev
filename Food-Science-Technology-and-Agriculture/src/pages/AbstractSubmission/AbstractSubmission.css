@@ -168,3 +168,21 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
 }
+
+/* File Upload Styles */
+.file-upload-container {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.file-upload-note {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
+
+.form-control-file {
+    width: 100%;
+    padding: 0.5rem 0;
+}

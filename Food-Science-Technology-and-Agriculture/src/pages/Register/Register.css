@@ -317,3 +317,68 @@ textarea.form-control {
         flex-direction: column;
     }
 }
+
+/* Active Column Styles matching screenshot */
+.pricing-table th.active-header-onspot,
+.pricing-table th.active-header-standard,
+.pricing-table th.active-header-early {
+    background-color: #ffd700 !important;
+    /* Yellow */
+    color: #1b5e20 !important;
+    /* Dark Green/Teal Text */
+    position: relative;
+    border-color: #ffd700;
+}
+
+/* Badge */
+.badge-active {
+    position: absolute;
+    top: -10px;
+    right: 5px;
+    background-color: #d32f2f;
+    /* Red */
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Active Cell Background */
+.pricing-table td.active-cell-onspot,
+.pricing-table td.active-cell-standard,
+.pricing-table td.active-cell-early {
+    background-color: #fffde7 !important;
+    /* Light Yellow */
+    /* border-left: 1px solid #ffd700;
+    border-right: 1px solid #ffd700; */
+}
+
+/* Active Price Text */
+.price-active {
+    font-weight: 800;
+    color: #004d40;
+    /* Dark Teal similar to header */
+    font-size: 1.05rem;
+}
+
+/* Ensure the radio button logic keeps the row alignment */
+.radio-label {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Selected Row Active Cell Highlight */
+.pricing-table td.selected-active-cell {
+    background-color: #ffe082 !important;
+    /* Deeper Amber/Yellow */
+    border: 2px solid #ffa000 !important;
+    /* Darker border */
+    transform: scale(1.02);
+    /* Slight pop */
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
