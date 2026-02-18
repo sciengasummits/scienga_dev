@@ -26,6 +26,24 @@ const AboutSection = () => {
                             State-of-the-Art Infrastructure: The summit will leverage Munich’s advanced conference facilities, such as the Messe München or ICM, known for hosting premier international trade shows.
                             Sustainability Leadership: Germany’s "Energiewende" (Energy Transition) policy makes Munich an inspiring location to witness real-world implementations of renewable energy at scale
                         </p>
+
+                        <h3 className="about__subhead">Conference Objectives</h3>
+                        <ul className="about__list">
+                            <li>Facilitate global collaboration on renewable energy solutions.</li>
+                            <li>Showcase cutting-edge sustainable technologies and innovations.</li>
+                            <li>Bridge the gap between academic research and industrial application.</li>
+                            <li>Formulate policy frameworks for a carbon-neutral future.</li>
+                            <li>Inspire next-generation leaders in environmental science.</li>
+                        </ul>
+
+                        <h3 className="about__subhead">Key Themes & Topics</h3>
+                        <ul className="about__list">
+                            <li>Solar, Wind, and Hydro Energy Systems.</li>
+                            <li>Green Hydrogen and Fuel Cell Technologies.</li>
+                            <li>Smart Grids and Energy Storage Solutions.</li>
+                            <li>Carbon Capture, Utilization, and Storage (CCUS).</li>
+                            <li>Sustainable Urban Planning and Green Architecture.</li>
+                        </ul>
                     </div>
                 </div>
 

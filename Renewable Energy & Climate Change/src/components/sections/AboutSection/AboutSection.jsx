@@ -24,12 +24,36 @@ const AboutSection = () => {
                         <p className="about__text">
                             Industry Excellence: Munich is home to world-leading energy exhibitions like Intersolar Europe, making it a focal point for the global solar and clean-tech industry.
                             State-of-the-Art Infrastructure: The summit will leverage Munich’s advanced conference facilities, such as the Messe München or ICM, known for hosting premier international trade shows.
-                            Sustainability Leadership: Germany’s "Energiewende" (Energy Transition) policy makes Munich an inspiring location to witness real-world implementations of renewable energy at scale
+                            Sustainability Leadership: Germany’s "Energiewende" (Energy Transition) policy makes Munich an inspiring location to witness real-world implementations of renewable energy at scale.
                         </p>
+
+                        <div className="about__objectives" style={{ marginTop: '2rem' }}>
+                            <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1rem', color: 'var(--color-text-header)' }}>Conference Objectives</h3>
+                            <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', color: 'var(--color-text-body)' }}>
+                                <li style={{ marginBottom: '0.5rem' }}><strong>Advance Global Knowledge Exchange:</strong> To facilitate a premier platform for researchers, industry leaders, and policymakers to exchange groundbreaking ideas and research in renewable energy and climate science.</li>
+                                <li style={{ marginBottom: '0.5rem' }}><strong>Foster Interdisciplinary Collaboration:</strong> To encourage cross-sector partnerships between academia, government bodies, and private industries for accelerating sustainable solutions.</li>
+                                <li style={{ marginBottom: '0.5rem' }}><strong>Showcase Innovative Technologies:</strong> To present state-of-the-art technologies and methodologies that address the pressing challenges of climate change and energy transition.</li>
+                                <li style={{ marginBottom: '0.5rem' }}><strong>Promote Policy Development:</strong> To discuss and formulate actionable policy frameworks that support global sustainability goals and environmental protection.</li>
+                                <li style={{ marginBottom: '0.5rem' }}><strong>Empower Future Leaders:</strong> To mentor and inspire young scientists and engineers through workshops, networking, and exposure to cutting-edge research.</li>
+                            </ul>
+                        </div>
+
+                        <div className="about__themes" style={{ marginTop: '2rem' }}>
+                            <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1rem', color: 'var(--color-text-header)' }}>Key Themes & Topics</h3>
+                            <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', color: 'var(--color-text-body)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.5rem' }}>
+                                <li>Solar Energy Technologies & Photovoltaics</li>
+                                <li>Wind Energy Systems & Offshore Developments</li>
+                                <li>Bioenergy, Biofuels & Biomass</li>
+                                <li>Green Hydrogen & Fuel Cells</li>
+                                <li>Climate Change Adaptation & Mitigation Strategies</li>
+                                <li>Energy Storage & Grid Modernization</li>
+                                <li>Sustainable Urban Planning & Smart Cities</li>
+                                <li>Carbon Capture, Utilization, and Storage (CCUS)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                {/* Right Side: Important Dates */}
                 {/* Right Side: Important Dates */}
                 <div className="about__dates-wrapper">
                     <div className="premium-dates-container">
