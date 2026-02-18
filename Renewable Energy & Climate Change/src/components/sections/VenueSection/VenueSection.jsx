@@ -4,7 +4,7 @@ import './VenueSection.css';
 const venues = [
     {
         id: 1,
-        image: "https://images.unsplash.com/photo-1595867865331-40375bde777c?w=1920&q=80"
+        image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1920&q=80"
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const venues = [
     },
     {
         id: 4,
-        image: "https://images.unsplash.com/photo-1627997937819-2194380e227a?w=1920&q=80"
+        image: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=1920&q=80"
     }
 ];
 

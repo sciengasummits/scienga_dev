@@ -16,9 +16,7 @@ const Logo = ({ className = '', linkTo = '/', onClick }) => {
                 </div>
             </div>
             <div className="logo-text-container">
-                <span className="logo-text-top">Global Summit on</span>
-                <span className="logo-text-main">Renewable Energy</span>
-                <span className="logo-text-sub">& Climate Change</span>
+                <span className="logo-text-main">RENECLIMSUMMIT2026</span>
             </div>
         </Link>
     );

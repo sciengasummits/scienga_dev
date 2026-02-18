@@ -50,12 +50,21 @@ const Register = ({ isDiscounted = false }) => {
     }
 
     // Pricing Data
-    const academicPricing = [
-        { id: 'speaker', label: 'Speaker Registration', early: applyDiscount(749), standard: applyDiscount(849), onspot: applyDiscount(949) },
-        { id: 'delegate', label: 'Delegate Registration', early: applyDiscount(899), standard: applyDiscount(999), onspot: applyDiscount(1099) },
-        { id: 'poster', label: 'Poster Registration', early: applyDiscount(449), standard: applyDiscount(549), onspot: applyDiscount(649) },
-        { id: 'student', label: 'Student', early: applyDiscount(299), standard: applyDiscount(399), onspot: applyDiscount(499) },
+    // Pricing Data
+    const baseAcademicPricing = [
+        { id: 'speaker', label: 'Speaker Registration', early: 749, standard: 849, onspot: 949 },
+        { id: 'delegate', label: 'Delegate Registration', early: 899, standard: 999, onspot: 1099 },
+        { id: 'poster', label: 'Poster Registration', early: 449, standard: 549, onspot: 649 },
+        { id: 'student', label: 'Student', early: 299, standard: 399, onspot: 499 },
     ];
+
+    const academicPricing = baseAcademicPricing.map(item => ({
+        ...item,
+        early: applyDiscount(item.early),
+        standard: applyDiscount(item.standard),
+        onspot: applyDiscount(item.onspot),
+        original: item // Keep original for display
+    }));
 
     const accommodationOptions = [
         { nights: 2, single: 360, double: 400, triple: 440 },
@@ -159,6 +168,16 @@ Registration Summary:
             </div>
 
             <div className="container section-padding">
+
+                {isDiscounted && (
+                    <div className="discount-banner">
+                        <span className="discount-icon">🎉</span>
+                        <div className="discount-text">
+                            <h3>Special Discount Activated!</h3>
+                            <p>You have unlocked a <strong>20% discount</strong> on all registration categories.</p>
+                        </div>
+                    </div>
+                )}
 
                 <div className="registration-form-container">
                     {/* Left Side: Form */}
@@ -275,13 +294,22 @@ Registration Summary:
                                         </label>
                                     </td>
                                     <td className={`${activePhase === 'early' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
-                                        <span className={activePhase === 'early' ? 'price-active' : ''}>$ {item.early}</span>
+                                        <div className="price-wrapper">
+                                            {isDiscounted && <span className="original-price">${item.original.early}</span>}
+                                            <span className={activePhase === 'early' ? 'price-active' : ''}>$ {item.early}</span>
+                                        </div>
                                     </td>
                                     <td className={`${activePhase === 'standard' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
-                                        <span className={activePhase === 'standard' ? 'price-active' : ''}>$ {item.standard}</span>
+                                        <div className="price-wrapper">
+                                            {isDiscounted && <span className="original-price">${item.original.standard}</span>}
+                                            <span className={activePhase === 'standard' ? 'price-active' : ''}>$ {item.standard}</span>
+                                        </div>
                                     </td>
                                     <td className={`${activePhase === 'onspot' && selectedAcademicCategory === item.id ? 'selected-active-cell' : ''}`}>
-                                        <span className={activePhase === 'onspot' ? 'price-active' : ''}>$ {item.onspot}</span>
+                                        <div className="price-wrapper">
+                                            {isDiscounted && <span className="original-price">${item.original.onspot}</span>}
+                                            <span className={activePhase === 'onspot' ? 'price-active' : ''}>$ {item.onspot}</span>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}

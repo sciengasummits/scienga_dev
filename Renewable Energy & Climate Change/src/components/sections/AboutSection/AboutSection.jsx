@@ -11,15 +11,22 @@ const AboutSection = () => {
                 <div className="about__content">
                     <h4 className="section-subtitle">Welcome To Our Summit</h4>
                     <h2 className="section-title">About The Conference</h2>
-                    <p className="about__text">
-                        We are truly delighted to welcome you to the <strong>Global Summit on Renewable Energy and Climate Change</strong>, scheduled to take place from <strong>March 23-25, 2027</strong>, in the vibrant city of <strong>Munich, Germany</strong>. This premier international summit brings together top minds from academia, industry, and government to explore transformative innovations in renewable energy and climate resilience.
-                    </p>
-                    <p className="about__text">
-                        The congress is designed to bridge the gap between visionary research and real-world implementation, serving as a dynamic platform for collaboration, knowledge exchange, and future-focused thinking. The conference aims to accelerate progress across disciplines and foster impactful connections that will drive a sustainable future for our planet.
-                    </p>
-                    <p className="about__text">
-                        Join us in <strong>Germany</strong> for three impactful days of insight, innovation, and connection at the forefront of clean energy and environmental science!
-                    </p>
+                    <div className="about__scroll-content">
+                        <p className="about__text">
+                            We are truly delighted to welcome you to the <strong>Global Summit on Renewable Energy and Climate Change</strong>, scheduled to take place from <strong>March 23-25, 2027</strong>, in the vibrant city of <strong>Munich, Germany</strong>. This premier international summit brings together top minds from academia, industry, and government to explore transformative innovations in renewable energy and climate resilience.
+                        </p>
+                        <p className="about__text">
+                            The congress is designed to bridge the gap between visionary research and real-world implementation, serving as a dynamic platform for collaboration, knowledge exchange, and future-focused thinking. The conference aims to accelerate progress across disciplines and foster impactful connections that will drive a sustainable future for our planet.
+                        </p>
+                        <p className="about__text">
+                            Join us in <strong>Germany</strong> for three impactful days of insight, innovation, and connection at the forefront of clean energy and environmental science!
+                        </p>
+                        <p className="about__text">
+                            Industry Excellence: Munich is home to world-leading energy exhibitions like Intersolar Europe, making it a focal point for the global solar and clean-tech industry.
+                            State-of-the-Art Infrastructure: The summit will leverage Munich’s advanced conference facilities, such as the Messe München or ICM, known for hosting premier international trade shows.
+                            Sustainability Leadership: Germany’s "Energiewende" (Energy Transition) policy makes Munich an inspiring location to witness real-world implementations of renewable energy at scale
+                        </p>
+                    </div>
                 </div>
 
                 {/* Right Side: Important Dates */}

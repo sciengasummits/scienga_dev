@@ -46,7 +46,7 @@
 }
 
 .hero__content {
-    max-width: 550px;
+    max-width: 700px;
     margin-top: 2rem;
 }
 
@@ -71,7 +71,9 @@
     opacity: 0.9;
     line-height: 1.6;
     max-width: 500px;
-    padding-left: 1rem;
+    padding-left: 0;
+    /* Removed padding to maximize width usage */
+    text-align: justify;
 }
 
 .hero__actions {
@@ -244,5 +246,37 @@
 
     .hero__actions button {
         width: 100%;
+    }
+}
+
+.hero__cpd-image {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    /* Reduced size */
+    height: auto;
+    z-index: 3;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.hero__cpd-image:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+    .hero__cpd-image {
+        width: 120px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero__cpd-image {
+        width: 100px;
+        bottom: 5px;
+        right: 5px;
     }
 }

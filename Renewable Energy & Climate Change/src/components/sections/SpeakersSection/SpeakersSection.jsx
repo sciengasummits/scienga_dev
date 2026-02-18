@@ -5,10 +5,14 @@ import './SpeakersSection.css';
 
 const SpeakersSection = () => {
     const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+    const [activeCategory, setActiveCategory] = useState('Speakers');
 
-    const filteredSpeakers = speakers.filter(speaker =>
-        !['Student', 'Committee', 'Student Speaker', 'Committee Speaker'].includes(speaker.category)
-    );
+    const filteredSpeakers = speakers.filter(speaker => {
+        if (activeCategory === 'Speakers') {
+            return !['Student', 'Committee'].includes(speaker.category);
+        }
+        return speaker.category === activeCategory;
+    });
 
     const openModal = (speaker) => {
         setSelectedSpeaker(speaker);
@@ -26,6 +30,18 @@ const SpeakersSection = () => {
                 <div className="text-center mb-5">
                     <h4 className="section-subtitle">Meet The Experts</h4>
                     <h2 className="section-title">Global Participants</h2>
+                </div>
+
+                <div className="speakers__filters">
+                    {['Speakers', 'Student', 'Committee'].map((category) => (
+                        <button
+                            key={category}
+                            className={`filter-btn ${activeCategory === category ? 'active' : ''}`}
+                            onClick={() => setActiveCategory(category)}
+                        >
+                            {category}
+                        </button>
+                    ))}
                 </div>
 
                 <div className="speakers__grid">

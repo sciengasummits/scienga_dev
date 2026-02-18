@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../common/Button/Button';
 import './HeroSection.css';
+import cpdImage from '../../../assets/images/cpd.jpg';
 
 const HeroSection = () => {
     const navigate = useNavigate();
@@ -45,7 +46,7 @@ const HeroSection = () => {
             <div className="container hero__container">
                 <div className="hero__content">
                     <h1 className="hero__title">
-                        <span className="hero__title-sub">GLOBAL SUMMIT ON</span> <br />
+                        <span className="hero__title-sub">Annual International Conference</span> <br />
                         RENEWABLE ENERGY & CLIMATE CHANGE
                     </h1>
 
@@ -94,6 +95,8 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
+
+            <img src={cpdImage} alt="CPD Certified" className="hero__cpd-image" />
         </section>
     );
 };

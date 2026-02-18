@@ -382,3 +382,53 @@ textarea.form-control {
     transition: all 0.2s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+/* Discount Banner */
+.discount-banner {
+    background: linear-gradient(135deg, #1b5e20, #43a047);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    border: 1px solid #2e7d32;
+    animation: slideDown 0.5s ease-out;
+}
+
+.discount-banner .discount-icon {
+    font-size: 2.5rem;
+}
+
+.discount-banner .discount-text h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.discount-banner .discount-text p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 1.1rem;
+}
+
+/* Price Display Improvements */
+.price-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #d32f2f; /* Red strikethrough */
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+    opacity: 0.8;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
