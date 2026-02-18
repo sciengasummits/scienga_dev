@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../common/Button/Button';
 import './HeroSection.css';
+import cpdImage from '../../../assets/images/cpd.jpg';
 
 const HeroSection = () => {
     const navigate = useNavigate();
@@ -94,6 +95,7 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
+            <img src={cpdImage} alt="CPD Certified" className="hero__cpd-image" />
         </section>
     );
 };

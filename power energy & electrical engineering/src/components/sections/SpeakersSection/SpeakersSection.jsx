@@ -6,9 +6,11 @@ import './SpeakersSection.css';
 const SpeakersSection = () => {
     const [selectedSpeaker, setSelectedSpeaker] = useState(null);
 
-    const filteredSpeakers = speakers.filter(speaker =>
-        !['Student', 'Committee', 'Student Speaker', 'Committee Speaker'].includes(speaker.category)
-    );
+    const getDisplayCategory = (category) => {
+        if (category === 'Student') return 'Student Speaker';
+        if (category === 'Committee') return 'Committee Speaker';
+        return category;
+    };
 
     const openModal = (speaker) => {
         setSelectedSpeaker(speaker);
@@ -29,7 +31,7 @@ const SpeakersSection = () => {
                 </div>
 
                 <div className="speakers__grid">
-                    {filteredSpeakers.map((speaker) => (
+                    {speakers.map((speaker) => (
                         <div className="speaker-card" key={speaker.id}>
                             <div className="speaker-img-wrapper">
                                 <img src={speaker.image} alt={speaker.name} className="speaker-img" />
@@ -38,7 +40,7 @@ const SpeakersSection = () => {
                                 </div>
                             </div>
                             <div className="speaker-info">
-                                {speaker.category && <span className="speaker-category">{speaker.category}</span>}
+                                {speaker.category && <span className="speaker-category">{getDisplayCategory(speaker.category)}</span>}
                                 <h3 className="speaker-name">{speaker.name}</h3>
                                 <p className="speaker-title">{speaker.title}</p>
                                 <p className="speaker-affiliation">{speaker.affiliation}</p>
@@ -59,7 +61,7 @@ const SpeakersSection = () => {
                             <button className="modal-close" onClick={closeModal}>&times;</button>
 
                             <div className="modal-body">
-                                {selectedSpeaker.category && <p className="modal-category">{selectedSpeaker.category}</p>}
+                                {selectedSpeaker.category && <p className="modal-category">{getDisplayCategory(selectedSpeaker.category)}</p>}
                                 <h3 className="modal-title">{selectedSpeaker.name}</h3>
                                 <span className="modal-type">{selectedSpeaker.title}</span>
                                 <p className="modal-affiliation-highlight">{selectedSpeaker.affiliation}</p>
