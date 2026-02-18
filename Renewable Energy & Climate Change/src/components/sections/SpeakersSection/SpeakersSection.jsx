@@ -6,6 +6,10 @@ import './SpeakersSection.css';
 const SpeakersSection = () => {
     const [selectedSpeaker, setSelectedSpeaker] = useState(null);
 
+    const filteredSpeakers = speakers.filter(speaker =>
+        !['Student', 'Committee', 'Student Speaker', 'Committee Speaker'].includes(speaker.category)
+    );
+
     const openModal = (speaker) => {
         setSelectedSpeaker(speaker);
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
@@ -25,7 +29,7 @@ const SpeakersSection = () => {
                 </div>
 
                 <div className="speakers__grid">
-                    {speakers.map((speaker) => (
+                    {filteredSpeakers.map((speaker) => (
                         <div className="speaker-card" key={speaker.id}>
                             <div className="speaker-img-wrapper">
                                 <img src={speaker.image} alt={speaker.name} className="speaker-img" />
